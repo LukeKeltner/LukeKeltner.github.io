@@ -1,0 +1,272 @@
+body
+{
+	color: #777777;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	background: url('../images/cork.png');
+	line-height: 20px;
+	display: block;
+}
+
+.contentHeader
+{
+	width:960px;
+	margin: 0 auto;
+	position: relative;
+	height:inherit;
+}
+
+.content
+{
+	width:960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header
+{
+	position:relative;
+	background-color: #ffffff;
+	border-bottom: 2px solid #cccccc;
+
+}
+
+header::after
+{
+	content: "";
+	display:block;
+	clear:both;
+}
+
+h1
+{
+	font-family: 'Georgia', Times, 'Times New Roman', serif;
+	color:#ffffff;
+	font-size: 30px;
+}
+
+h2
+{
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	color:#4aaaa5;
+	border-bottom: 2px solid #cccccc;
+	margin-top: 0px;
+	padding-bottom: 20px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#name
+{
+	background-color: #4aaaa5;
+	width:250px;
+	text-align: center;
+	padding: 20px 0px 20px 0px;
+	float:left;
+	font-weight: bold;
+}
+
+#options
+{
+	position: absolute;
+	right:0px;
+	top:50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+
+
+.options
+{
+	display: inline-block;
+	margin-right: 20px;
+	border-right:1px solid #cccccc;
+	padding-right: 20px;
+}
+
+.contactlink
+{
+	padding:0px;
+	margin-left:0px;
+	margin-right: 0px;
+	border-right:0px;
+}
+
+a
+{
+	text-decoration: none;
+	color:#777777;
+}
+
+a:hover
+{
+	color: #4aaaa5;
+}
+
+#aboutme
+{
+	margin-top: 20px;
+	background-color: #ffffff;
+	border:1px solid #dddddd;
+	width:586px;
+	padding:20px;
+	float: left;
+}
+
+#face
+{
+	width:200px;
+	float:left;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	border:1px solid #dddddd;
+
+}
+
+p
+{
+	margin-top: 20px;
+}
+
+#connect
+{
+	margin-top: 20px;
+	background-color: #ffffff;
+	border:1px solid #dddddd;
+	width:270px;
+	padding:20px;
+	float:left;
+	margin-left: 20px;
+}
+
+.connecticon
+{
+	float:left;
+	width:67px;
+	margin-top:20px;
+}
+
+.linkedin
+{
+	margin-left:34.5px;
+}
+
+.stackoverflow
+{
+	margin-right:0px;
+	float:right;
+}
+
+#icons
+{
+	position:relative;
+	margin: 0 auto;
+}
+
+#icons::after
+{
+	content: "";
+	display:block;
+	clear:both;
+}
+
+.content::after
+{
+	content: "";
+	display:block;
+	clear:both;
+}
+
+footer
+{
+	position: sticky;
+	clear:both;
+	background-color: #666666;
+	color: #ffffff;
+	text-align: center;
+	padding: 20px;
+	border-top:4px solid #4aaaa5;
+	margin-top: 20px;
+	bottom:0px;
+}
+
+/*Contact Me CSS*/
+.contactme
+{
+	margin-top: 20px;
+	background-color: #ffffff;
+	border:1px solid #dddddd;
+	width:586px;
+	padding:20px;
+	float: left;
+}
+
+.inputs
+{
+	margin-top:20px;
+	margin-bottom: 10px;
+}
+
+.submit
+{
+	background-color: #4aaaa5;
+	width:100px;
+	text-align: center;
+	padding: 20px 0px 20px 0px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-top: 20px;
+}
+
+
+/*Portfolio CSS*/
+#portfolio
+{
+	margin-top: 20px;
+	background-color: #ffffff;
+	border:1px solid #dddddd;
+	width:586px;
+	padding:20px;
+	float: left;
+}
+
+.portpic
+{
+	width:263px;
+	height:200px;
+}
+
+.portpicdiv
+{
+	position: relative;
+	margin: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	float:left;
+}
+
+.picdeets
+{
+	position: absolute;
+	background-color: #4aaaa5;
+	color:#ffffff;
+	text-align: center;
+	width:243px;
+	font-size:20px;
+	padding:10px;
+	font-family: 'Georgia', Times, 'Times New Roman', serif;
+	bottom:20px;
+}
+
+.i
+{
+	font-style: italic;
+	text-in
+}
+
+span
+{
+	font-style: italic;
+}
+
+
