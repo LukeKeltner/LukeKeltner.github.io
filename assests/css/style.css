@@ -7,7 +7,7 @@ body
 	display: block;
 }
 
-.contentHeader
+.contentheader
 {
 	width:960px;
 	margin: 0 auto;
@@ -120,7 +120,6 @@ a:hover
 	margin-right: 20px;
 	margin-bottom: 10px;
 	border:1px solid #dddddd;
-
 }
 
 p
@@ -269,4 +268,182 @@ span
 	font-style: italic;
 }
 
+@media screen and (max-width: 980px)
+{
+	.content
+	{
+		width:700px;
+	}
+
+	#aboutme
+	{
+		width:400px;
+	}
+
+	#face
+	{
+		float:none;
+		margin-right: 0px;
+		width:400px;
+	}
+
+	#connect
+	{
+		width:196px;
+	}
+
+	.connecticon
+	{
+		width:50px;
+	}
+
+	.connectwithme
+	{
+		font-size: 20px;
+	}
+
+	.linkedin
+	{
+		margin-left:23px;
+	}
+
+}
+
+@media screen and (max-width: 768px)
+{
+	.content
+	{
+		width:600px;
+	}
+
+	h1
+	{
+		font-size: 25px;
+	}
+
+	#name
+	{
+		width:200px;
+		padding: 20px 0px 20px 0px;
+	}
+
+	.options
+	{
+		display: inline-block;
+		margin-right: 10px;
+		border-right:1px solid #cccccc;
+		padding-right: 10px;
+		font-size: 15px;
+	}
+
+	.contactlink
+	{
+		padding:0px;
+		margin-left:0px;
+		margin-right: 0px;
+		border-right:0px;
+	}
+
+	#aboutme
+	{
+		width:558px;
+	}
+
+	#face
+	{
+		width:200px;
+		float:left;
+		margin-top: 20px;
+		margin-right: 20px;
+		margin-bottom: 10px;
+		border:1px solid #dddddd;
+	}
+
+	#connect
+	{
+		margin-left: 0px;
+		width: 558px;
+	}
+
+	.stackoverflow
+	{
+		float:left;
+		margin-left:23px;
+	}
+
+}
+
+@media screen and (max-width: 640px)
+{
+	.content
+	{
+		width:600px;
+	}
+
+	.contentheader
+	{
+		width:640px;
+	}
+
+
+	header
+	{
+		height:120px;
+	}
+
+	#name
+	{
+		background-color: #4aaaa5;
+		width:640px;
+		text-align: center;
+		padding: 20px 0px 20px 0px;
+		float:left;
+		font-weight: bold;
+	}
+
+	/* #name
+	{
+		display:inline;
+	}
+	
+	#name:after 
+	{
+	    content:"\A";
+	    white-space: pre;
+	    background-color: none;
+	} */
+
+	#options
+	{
+		position: center;
+		right:50%;
+		top:65%;
+		transform: translateX(50%);
+		font-size: 20px;
+	}
+
+
+	.options
+	{
+		display: inline-block;
+		margin-right: 30px;
+		border-right:1px solid #cccccc;
+		padding-right: 30px;
+	}
+
+	.contactlink
+	{
+		padding:0px;
+		margin-left:0px
+		margin-right: 0px;
+		border-right:0px;
+	}
+
+	#face
+	{
+		width:556px;
+	}
+
+
+}
 
