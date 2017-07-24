@@ -206,6 +206,16 @@ footer
 	margin-bottom: 10px;
 }
 
+input
+{
+	width:568px;
+}
+
+textarea
+{
+	width:568px;
+}
+
 .submit
 {
 	background-color: #4aaaa5;
@@ -307,6 +317,90 @@ span
 		margin-left:23px;
 	}
 
+	/*Portfolio CSS*/
+	#portfolio
+	{
+		margin-top: 20px;
+		background-color: #ffffff;
+		border:1px solid #dddddd;
+		width:400px;
+		padding:20px;
+		float: left;
+	}
+
+	.portpic
+	{
+		display: block;
+		margin:auto;
+		width:400px;
+		height:250px;
+	}
+
+	.portpicdiv
+	{
+		position: relative;
+		margin: 0px;
+		margin-right: 0px;
+		margin-bottom: 20px;
+		float:left;
+	}
+
+	.picdeets
+	{
+		position: absolute;
+		background-color: #4aaaa5;
+		color:#ffffff;
+		text-align: center;
+		width:380px;
+		font-size:20px;
+		padding:10px;
+		font-family: 'Georgia', Times, 'Times New Roman', serif;
+		bottom:20px;
+	}
+
+	.portfolioh2
+	{
+		margin-bottom: 20px;
+	}
+
+	/*Contact Me CSS*/
+	.contactme
+	{
+		margin-top: 20px;
+		background-color: #ffffff;
+		border:1px solid #dddddd;
+		width:400px;
+		padding:20px;
+		float: left;
+	}
+
+	.inputs
+	{
+		margin-top:20px;
+		margin-bottom: 10px;
+	}  
+
+	input
+	{
+		width:400px;
+	}
+
+	textarea
+	{
+		width:400px;
+	}
+
+	.submit
+	{
+		background-color: #4aaaa5;
+		width:100px;
+		text-align: center;
+		padding: 20px 0px 20px 0px;
+		font-weight: bold;
+		color: #ffffff;
+		margin-top: 20px;
+	}
+
 }
 
 @media screen and (max-width: 768px)
@@ -371,6 +465,83 @@ span
 		margin-left:23px;
 	}
 
+	/*Portfolio CSS*/
+	#portfolio
+	{
+		margin-top: 20px;
+		background-color: #ffffff;
+		border:1px solid #dddddd;
+		width:558px;
+		padding:20px;
+		float: left;
+	}
+
+	.portpic
+	{
+		width:233px;
+		height:200px;
+	}
+
+	.portpicdiv
+	{
+		position: relative;
+		margin: 20px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		float:left;
+	}
+
+	.picdeets
+	{
+		position: absolute;
+		background-color: #4aaaa5;
+		color:#ffffff;
+		text-align: center;
+		width:213px;
+		font-size:20px;
+		padding:10px;
+		font-family: 'Georgia', Times, 'Times New Roman', serif;
+		bottom:20px;
+	}
+
+	/*Contact Me CSS*/
+	.contactme
+	{
+		margin-top: 20px;
+		background-color: #ffffff;
+		border:1px solid #dddddd;
+		width:558px;
+		padding:20px;
+		float: left;
+	}
+
+	.inputs
+	{
+		margin-top:20px;
+		margin-bottom: 10px;
+	}  
+
+	input
+	{
+		width:558px;
+	}
+
+	textarea
+	{
+		width:558px;
+	}
+
+	.submit
+	{
+		background-color: #4aaaa5;
+		width:100px;
+		text-align: center;
+		padding: 20px 0px 20px 0px;
+		font-weight: bold;
+		color: #ffffff;
+		margin-top: 20px;
+	}
+
 }
 
 @media screen and (max-width: 640px)
@@ -401,18 +572,6 @@ span
 		font-weight: bold;
 	}
 
-	/* #name
-	{
-		display:inline;
-	}
-	
-	#name:after 
-	{
-	    content:"\A";
-	    white-space: pre;
-	    background-color: none;
-	} */
-
 	#options
 	{
 		position: center;
@@ -442,6 +601,26 @@ span
 	#face
 	{
 		width:556px;
+	}
+
+	/*Portfolio CSS*/
+	.portpic
+	{
+		width:520px;
+		height:300px;
+	}
+
+	.picdeets
+	{
+		position: absolute;
+		background-color: #4aaaa5;
+		color:#ffffff;
+		text-align: center;
+		width:500px;
+		font-size:20px;
+		padding:10px;
+		font-family: 'Georgia', Times, 'Times New Roman', serif;
+		bottom:20px;
 	}
 
 
