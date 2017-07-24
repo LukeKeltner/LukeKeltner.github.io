@@ -548,24 +548,26 @@ span
 {
 	.content
 	{
-		width:600px;
+		width:100%;
 	}
 
 	.contentheader
 	{
-		width:640px;
+		width:100%;
+		padding:0px;
 	}
 
 
 	header
 	{
+		width:100%;
 		height:120px;
 	}
 
 	#name
 	{
 		background-color: #4aaaa5;
-		width:640px;
+		width:100%;
 		text-align: center;
 		padding: 20px 0px 20px 0px;
 		float:left;
@@ -579,17 +581,18 @@ span
 		top:65%;
 		transform: translateX(50%);
 		font-size: 20px;
+		width:100%;
+		text-align: center
 	}
 
 
 	.options
 	{
 		display: inline-block;
-		margin-right: 30px;
+		margin-right: 10px;
 		border-right:1px solid #cccccc;
-		padding-right: 30px;
+		padding-right: 10px;
 	}
-
 	.contactlink
 	{
 		padding:0px;
@@ -598,9 +601,19 @@ span
 		border-right:0px;
 	}
 
+	#aboutme
+	{
+		width:80%;
+	}
+
 	#face
 	{
-		width:556px;
+		width:100%;
+	}
+
+	#connect
+	{
+		width:80%;
 	}
 
 	/*Portfolio CSS*/
