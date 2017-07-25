@@ -1,56 +1,108 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="assests/css/reset.css" rel="stylesheet" />
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+	
+		<link href="assests/css/bootswatch.css" rel="stylesheet" />
 		<link href="assests/css/style.css" rel="stylesheet" />
 		<title>About Luke</title>
 	</head>
+	<body class="site">
 
-	<body>
-		<header>
-			<div class="content contentheader">
-				<div id="name">
-					<h1>Luke Keltner</h1>
-				</div>
-				<div id="options">
-					<a class="options" href="index.html" style="color:#4aaaa5">About</a>
-					<a class="options" href="portfolio.html">Portfolio</a>
-					<a class="options contactlink" href="contact.html">Contact</a>
-				</div>
-			</div>
-		</header>
-			<div class="content">
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">Luke Keltner</a>
+		    </div>
 
-				<section id="aboutme">
-					<h2>About Me</h2>
-					<img id="face" src="assests/images/face.jpg"/>
-					<p>I’m currently on my 4th cup of coffee as I write this. That might sound like a bit much but it only means that I must not be sleeping at the moment.  I’m not sure what the World Wildlife Federation would classify me as if all coffee suddenly disappeared from the face of the Earth but I’m assuming I would be in a similar class a Gollum, the once-elf who has decided to spend eternity in a mountain.</p>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="index.html">About</a></li>
+		        <li><a href="portfolio.html">Portfolio</a></li>
+		        <li><a href="contact.html">Contact</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
 
-					<p>I do like Lord of the Rings but I'm a much bigger Harry Potter fan.  I find it suspicious that if there is a God, she would have decided to create reality the way it is, then create someone in this reality who can conceive of a much better one and not be self conscious about it.  Of course, it could just be that J. K. Rowling <span>is</span> God...that makes the most sense to me right now.</p>
+		<div class="container site-content">
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
 
-					<p>Besides coffee and Harry Potter, I think my two other most favorite things in the world are haircuts and Skyline Chili. Now, to be fair, I was not a fan of Skyline Chili for the first ten or so times I had it.  My father was obsessed with it when I was a child so he kept feeding it to me.  However, one  day everything clicked and I could not get enough.  I still have cravings for it...like <span>intense</span> cravings. Writing this is making another way happen now.</p>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title contenttitle">About Me</h1>
+						</div>
 
-					<p>Maybe I should finish off this rambling with who I am.  I have a PhD in Theoretical Physics where I studied a new mechanism for potentially quantizing General Relativity which involves gravitons scattering off themselves in a nonlocal and quasi noncausal manner.  I currently teach physics at a local private high school and very much am enjoying to learn how to code!</p>
+						<div class="panel-body">
+							<img class="face z-depth-5" src="assests/images/face.jpg"/>
+							<p>I’m currently on my 4th cup of coffee as I write this. That might sound like a bit much but it only means that I must not be sleeping at the moment.  I’m not sure what the World Wildlife Federation would classify me as if all coffee suddenly disappeared from the face of the Earth but I’m assuming I would be in a similar class a Gollum, the once-elf who has decided to spend eternity in a mountain.</p>
 
-				</section>
+							<p>I do like Lord of the Rings but I'm a much bigger Harry Potter fan.  I find it suspicious that if there is a God, she would have decided to create reality the way it is, then create someone in this reality who can conceive of a much better one and not be self conscious about it.  Of course, it could just be that J. K. Rowling <span>is</span> God...that makes the most sense to me right now.</p>
 
-				<section id="connect">
-					<h2 class="connectwithme">Connect With Me</h2>
-					<div id='icons'>
-						<a href='https://github.com/LukeKeltner' target="_blank"><img class="connecticon" src="assests/images/github.png"/></a>
-						<a href='https://www.linkedin.com/in/luke-keltner-8a38b350' target="_blank"><img class="connecticon linkedin" src="assests/images/linkedin.png"/></a>
-						<a href='https://stackoverflow.com/users/7071900/luke-keltner' target='_blank'><img class="connecticon stackoverflow" src="assests/images/stackoverflow.png"/></a>
+							<p>Besides coffee and Harry Potter, I think my two other most favorite things in the world are haircuts and Skyline Chili. Now, to be fair, I was not a fan of Skyline Chili for the first ten or so times I had it.  My father was obsessed with it when I was a child so he kept feeding it to me.  However, one  day everything clicked and I could not get enough.  I still have cravings for it...like <span>intense</span> cravings. Writing this is making another one happen now.</p>
+
+							<p>Maybe I should finish off this rambling with who I am.  I have a PhD in Theoretical Physics where I studied a new mechanism for potentially quantizing General Relativity which involves gravitons scattering off themselves in a nonlocal and quasi noncausal manner.  I currently teach physics at a local private high school and very much am enjoying to learn how to code!</p>
+						</div>
 					</div>
-				</section>
+
+
+				</div>
+
+				<!--<div class="clearfix visible-xs"></div>-->
+
+				<div class="col-xs-12 col-md-4">
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title contenttitle">Connect With Me</h1>
+						</div>
+
+						<div class="panel-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-4 col-md-4">
+										<a href='https://github.com/LukeKeltner' target="_blank"><img class="social center-block" src="assests/images/github.png"/></a>
+									</div>
+									<div class="col-xs-4 col-md-4">
+										<a href='https://www.linkedin.com/in/luke-keltner-8a38b350' target="_blank"><img class="social linkedin center-block" src="assests/images/linkedin.png"/></a>
+									</div>
+									<div class="col-xs-4 col-md-4">
+										<a href='https://stackoverflow.com/users/7071900/luke-keltner' target='_blank'><img class="social center-block" src="assests/images/stackoverflow.png"/></a>
+									</div>
+								</div>		
+							</div>		
+						</div>
+					</div>	
+				</div>
 			</div>
 
 
-			<footer>
-				&copy; Copyright 2017 Luke Keltner
-			</footer>
 
+		</div>
+
+
+		<footer class="footer">
+			<div class="container-fluid" id="footer">
+				&copy; Copyright 2017 Luke Keltner
+		    </div>
+		</footer>
+		  
+
+
+		<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	</body>
-
 </html>

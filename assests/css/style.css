@@ -2,640 +2,135 @@ body
 {
 	color: #777777;
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	background: url('../images/cork.png');
+	/*background: url('../images/cork.png');*/
+	background-color: #D4E6F1;
 	line-height: 20px;
 	display: block;
+	padding-top: 70px;
 }
 
-.contentheader
+navbar-default
 {
-	width:960px;
-	margin: 0 auto;
-	position: relative;
-	height:inherit;
+	background-color: #337ab7;
 }
 
-.content
+.navbar-brand
 {
-	width:960px;
-	margin: 0 auto;
-	position: relative;
-}
-
-header
-{
-	position:relative;
-	background-color: #ffffff;
-	border-bottom: 2px solid #cccccc;
-
-}
-
-header::after
-{
-	content: "";
-	display:block;
-	clear:both;
-}
-
-h1
-{
-	font-family: 'Georgia', Times, 'Times New Roman', serif;
-	color:#ffffff;
 	font-size: 30px;
 }
 
-h2
+.face
 {
-	font-family: 'Georgia', Times, Times New Roman, serif;
-	color:#4aaaa5;
-	border-bottom: 2px solid #cccccc;
-	margin-top: 0px;
-	padding-bottom: 20px;
-	font-size: 24px;
-	font-weight: bold;
-}
-
-#name
-{
-	background-color: #4aaaa5;
-	width:250px;
-	text-align: center;
-	padding: 20px 0px 20px 0px;
 	float:left;
-	font-weight: bold;
+	width:30%;
+	min-width: 180px;
+	margin-right:20px;
+	margin-bottom:20px;
 }
 
-#options
+.social
+{
+	width:100%;
+	max-width: 100px;
+}
+
+.footer
+{
+	position: relative;
+	border-top:1px solid #2980B9;
+	width:100%;
+	height:60px;
+	bottom:0%;
+	background-color: #5499c7;
+}
+
+#footer
 {
 	position: absolute;
-	right:0px;
 	top:50%;
-	transform: translateY(-50%);
-	font-size: 20px;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:white;
 }
 
-
-.options
+.contenttitle
 {
-	display: inline-block;
-	margin-right: 20px;
-	border-right:1px solid #cccccc;
-	padding-right: 20px;
-}
-
-.contactlink
-{
-	padding:0px;
-	margin-left:0px;
-	margin-right: 0px;
-	border-right:0px;
-}
-
-a
-{
-	text-decoration: none;
-	color:#777777;
-}
-
-a:hover
-{
-	color: #4aaaa5;
-}
-
-#aboutme
-{
-	margin-top: 20px;
-	background-color: #ffffff;
-	border:1px solid #dddddd;
-	width:586px;
-	padding:20px;
-	float: left;
-}
-
-#face
-{
-	width:200px;
-	float:left;
-	margin-top: 20px;
-	margin-right: 20px;
-	margin-bottom: 10px;
-	border:1px solid #dddddd;
-}
-
-p
-{
-	margin-top: 20px;
-}
-
-#connect
-{
-	margin-top: 20px;
-	background-color: #ffffff;
-	border:1px solid #dddddd;
-	width:270px;
-	padding:20px;
-	float:left;
-	margin-left: 20px;
-}
-
-.connecticon
-{
-	float:left;
-	width:67px;
-	margin-top:20px;
-}
-
-.linkedin
-{
-	margin-left:34.5px;
-}
-
-.stackoverflow
-{
-	margin-right:0px;
-	float:right;
-}
-
-#icons
-{
-	position:relative;
-	margin: 0 auto;
-}
-
-#icons::after
-{
-	content: "";
-	display:block;
-	clear:both;
-}
-
-.content::after
-{
-	content: "";
-	display:block;
-	clear:both;
-}
-
-footer
-{
-	position: sticky;
-	clear:both;
-	background-color: #666666;
-	color: #ffffff;
-	text-align: center;
-	padding: 20px;
-	border-top:4px solid #4aaaa5;
-	margin-top: 20px;
-	bottom:0px;
-}
-
-/*Contact Me CSS*/
-.contactme
-{
-	margin-top: 20px;
-	background-color: #ffffff;
-	border:1px solid #dddddd;
-	width:586px;
-	padding:20px;
-	float: left;
-}
-
-.inputs
-{
-	margin-top:20px;
-	margin-bottom: 10px;
-}
-
-input
-{
-	width:568px;
-}
-
-textarea
-{
-	width:568px;
-}
-
-.submit
-{
-	background-color: #4aaaa5;
-	width:100px;
-	text-align: center;
-	padding: 20px 0px 20px 0px;
-	font-weight: bold;
-	color: #ffffff;
-	margin-top: 20px;
-}
-
-
-/*Portfolio CSS*/
-#portfolio
-{
-	margin-top: 20px;
-	background-color: #ffffff;
-	border:1px solid #dddddd;
-	width:586px;
-	padding:20px;
-	float: left;
-}
-
-.portpic
-{
-	width:263px;
-	height:200px;
+	font-size: 30px;
 }
 
 .portpicdiv
 {
 	position: relative;
-	margin: 20px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	float:left;
+	text-align: center;
+}
+
+.pic
+{
+	width:400px;
+	height:250px;
+	border:1px solid #2980B9;
+}
+
+.img-center 
+{
+    display: block;
+    margin: 0 auto;
 }
 
 .picdeets
 {
 	position: absolute;
-	background-color: #4aaaa5;
-	color:#ffffff;
-	text-align: center;
-	width:243px;
-	font-size:20px;
+	color:white;
+	background-color: #337ab7;
+	width:100%;
+	bottom:10%;
 	padding:10px;
-	font-family: 'Georgia', Times, 'Times New Roman', serif;
-	bottom:20px;
+	font-size: 20px;
 }
 
-.i
+.hangman
 {
-	font-style: italic;
-	text-in
+	max-width:400px;
 }
 
-span
+.dragon
 {
-	font-style: italic;
+	max-width:400px;
 }
 
-@media screen and (max-width: 980px)
+.portcol
 {
-	.content
-	{
-		width:700px;
-	}
-
-	#aboutme
-	{
-		width:400px;
-	}
-
-	#face
-	{
-		float:none;
-		margin-right: 0px;
-		width:400px;
-	}
-
-	#connect
-	{
-		width:196px;
-	}
-
-	.connecticon
-	{
-		width:50px;
-	}
-
-	.connectwithme
-	{
-		font-size: 20px;
-	}
-
-	.linkedin
-	{
-		margin-left:23px;
-	}
-
-	/*Portfolio CSS*/
-	#portfolio
-	{
-		margin-top: 20px;
-		background-color: #ffffff;
-		border:1px solid #dddddd;
-		width:400px;
-		padding:20px;
-		float: left;
-	}
-
-	.portpic
-	{
-		display: block;
-		margin:auto;
-		width:400px;
-		height:250px;
-	}
-
-	.portpicdiv
-	{
-		position: relative;
-		margin: 0px;
-		margin-right: 0px;
-		margin-bottom: 20px;
-		float:left;
-	}
-
-	.picdeets
-	{
-		position: absolute;
-		background-color: #4aaaa5;
-		color:#ffffff;
-		text-align: center;
-		width:380px;
-		font-size:20px;
-		padding:10px;
-		font-family: 'Georgia', Times, 'Times New Roman', serif;
-		bottom:20px;
-	}
-
-	.portfolioh2
-	{
-		margin-bottom: 20px;
-	}
-
-	/*Contact Me CSS*/
-	.contactme
-	{
-		margin-top: 20px;
-		background-color: #ffffff;
-		border:1px solid #dddddd;
-		width:400px;
-		padding:20px;
-		float: left;
-	}
-
-	.inputs
-	{
-		margin-top:20px;
-		margin-bottom: 10px;
-	}  
-
-	input
-	{
-		width:400px;
-	}
-
-	textarea
-	{
-		width:400px;
-	}
-
-	.submit
-	{
-		background-color: #4aaaa5;
-		width:100px;
-		text-align: center;
-		padding: 20px 0px 20px 0px;
-		font-weight: bold;
-		color: #ffffff;
-		margin-top: 20px;
-	}
-
+	max-width:400px;
+	margin-top:20px;
 }
 
-@media screen and (max-width: 768px)
+
+input
 {
-	.content
-	{
-		width:600px;
-	}
-
-	h1
-	{
-		font-size: 25px;
-	}
-
-	#name
-	{
-		width:200px;
-		padding: 20px 0px 20px 0px;
-	}
-
-	.options
-	{
-		display: inline-block;
-		margin-right: 10px;
-		border-right:1px solid #cccccc;
-		padding-right: 10px;
-		font-size: 15px;
-	}
-
-	.contactlink
-	{
-		padding:0px;
-		margin-left:0px;
-		margin-right: 0px;
-		border-right:0px;
-	}
-
-	#aboutme
-	{
-		width:558px;
-	}
-
-	#face
-	{
-		width:200px;
-		float:left;
-		margin-top: 20px;
-		margin-right: 20px;
-		margin-bottom: 10px;
-		border:1px solid #dddddd;
-	}
-
-	#connect
-	{
-		margin-left: 0px;
-		width: 558px;
-	}
-
-	.stackoverflow
-	{
-		float:left;
-		margin-left:23px;
-	}
-
-	/*Portfolio CSS*/
-	#portfolio
-	{
-		margin-top: 20px;
-		background-color: #ffffff;
-		border:1px solid #dddddd;
-		width:558px;
-		padding:20px;
-		float: left;
-	}
-
-	.portpic
-	{
-		width:233px;
-		height:200px;
-	}
-
-	.portpicdiv
-	{
-		position: relative;
-		margin: 20px;
-		margin-right: 0px;
-		margin-bottom: 0px;
-		float:left;
-	}
-
-	.picdeets
-	{
-		position: absolute;
-		background-color: #4aaaa5;
-		color:#ffffff;
-		text-align: center;
-		width:213px;
-		font-size:20px;
-		padding:10px;
-		font-family: 'Georgia', Times, 'Times New Roman', serif;
-		bottom:20px;
-	}
-
-	/*Contact Me CSS*/
-	.contactme
-	{
-		margin-top: 20px;
-		background-color: #ffffff;
-		border:1px solid #dddddd;
-		width:558px;
-		padding:20px;
-		float: left;
-	}
-
-	.inputs
-	{
-		margin-top:20px;
-		margin-bottom: 10px;
-	}  
-
-	input
-	{
-		width:558px;
-	}
-
-	textarea
-	{
-		width:558px;
-	}
-
-	.submit
-	{
-		background-color: #4aaaa5;
-		width:100px;
-		text-align: center;
-		padding: 20px 0px 20px 0px;
-		font-weight: bold;
-		color: #ffffff;
-		margin-top: 20px;
-	}
-
+	width:100%;
 }
 
-@media screen and (max-width: 640px)
+textarea
 {
-	.content
-	{
-		width:100%;
-	}
-
-	.contentheader
-	{
-		width:100%;
-		padding:0px;
-	}
-
-
-	header
-	{
-		width:100%;
-		height:120px;
-	}
-
-	#name
-	{
-		background-color: #4aaaa5;
-		width:100%;
-		text-align: center;
-		padding: 20px 0px 20px 0px;
-		float:left;
-		font-weight: bold;
-	}
-
-	#options
-	{
-		position: center;
-		right:50%;
-		top:65%;
-		transform: translateX(50%);
-		font-size: 20px;
-		width:100%;
-		text-align: center
-	}
-
-
-	.options
-	{
-		display: inline-block;
-		margin-right: 10px;
-		border-right:1px solid #cccccc;
-		padding-right: 10px;
-	}
-	.contactlink
-	{
-		padding:0px;
-		margin-left:0px
-		margin-right: 0px;
-		border-right:0px;
-	}
-
-	#aboutme
-	{
-		width:80%;
-	}
-
-	#face
-	{
-		width:100%;
-	}
-
-	#connect
-	{
-		width:80%;
-	}
-
-	/*Portfolio CSS*/
-	.portpic
-	{
-		width:520px;
-		height:300px;
-	}
-
-	.picdeets
-	{
-		position: absolute;
-		background-color: #4aaaa5;
-		color:#ffffff;
-		text-align: center;
-		width:500px;
-		font-size:20px;
-		padding:10px;
-		font-family: 'Georgia', Times, 'Times New Roman', serif;
-		bottom:20px;
-	}
-
+	width:100%;
+	height:300px;
 
 }
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
+@media (max-width: 768px) 
+{
+  .dragon 
+  {
+  	margin-top:20px;
+  }
+}
