@@ -130,14 +130,14 @@ textarea
   flex: 1;
 }
 
-@media (max-width: 768px) 
+@media (max-width: 767px) 
 {
 
 	body
   {
   	margin-top: -70px;
   }
-  
+
   .dragon 
   {
   	margin-top:20px;
