@@ -132,6 +132,12 @@ textarea
 
 @media (max-width: 768px) 
 {
+
+	body
+  {
+  	margin-top: -70px;
+  }
+  
   .dragon 
   {
   	margin-top:20px;
