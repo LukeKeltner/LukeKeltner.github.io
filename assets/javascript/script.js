@@ -282,9 +282,9 @@ $(document).ready(function()
 		run(questionBank[0])
 	})
 
-	$('.answer-group').on('click', function()
+	$('.answer-group').on('click', function(event)
 	{
-		var usersPick = event.srcElement.textContent
+		var usersPick = event.target.textContent
 
 		if (usersPick === currentQuestion.rightAnswer && !freeze)
 		{
