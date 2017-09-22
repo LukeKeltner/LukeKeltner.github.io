@@ -1,0 +1,44 @@
+body
+{
+	margin-top: 30px;
+}
+
+.coin-row
+{
+	margin-bottom: 30px;
+}
+
+#logo
+{
+	display: inline-block;
+	font-size: 40px;
+}
+.center-block 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login
+{
+	margin-top: 20px;
+}
+
+.login-alert
+{
+	margin-bottom: 0px;
+}
+
+.register-alert
+{
+	margin-top: 20px;
+	display: none;
+}
+
+.login-alert
+{
+	margin-top: 20px;
+	display: none;
+	
+}

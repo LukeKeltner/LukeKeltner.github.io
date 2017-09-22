@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<title>Physics Coins</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			<img src="assets/images/coin.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		  <a class="navbar-brand" href="#">Physics Coins</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+			    <ul class="navbar-nav mr-auto">
+				      <li class="nav-item active">
+				        	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				      </li>
+				      <li class="nav-item">
+				        	<a class="nav-link" href="#">Features</a>
+				      </li>
+				      <li class="nav-item pull-xs-right">
+				        	<a class="nav-link" href="#">Pricing</a>
+				      </li>
+				      <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Dropdown link
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						          <a class="dropdown-item" href="#">Action</a>
+						          <a class="dropdown-item" href="#">Another action</a>
+						          <a class="dropdown-item" href="#">Something else here</a>
+					        </div>
+				      </li>
+			    </ul>
+
+			  	<ul class="navbar-nav">
+			      	<li><a class="nav-link" href="#">Logout<span class="sr-only">(current)</span></a></li>
+			    </ul>
+			
+		  </div>
+	</nav>
+
+	<div class="container">
+<!-- 		<div class="jumbotron text-center">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Welcome <span id="welcome"></span>!</h1>
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="assets/images/coin.png" width="80" alt="">
+			<h1 id="coins-display">0</h1>
+		</div>
+
+		<div class="col-md-6">
+			<h4>Topic: <span id="topic-display">Pick a Topic</span></h4>
+			<h4>Gamble: <span id="gamble-display">Pick an Amount of Coins</span></h4>
+			<button type="button" class="btn btn-success btn-lg" id="go-for-it">Go For It!</button>
+		</div>
+
+	</div>
+</div> -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card text-center">
+					<div class="card-header">
+						<h3>Welcome <span id="welcome"></span>!</h3>
+					</div>
+					<div class="card-body">
+						<div class="row">
+
+							<div class="col-md-12">
+								<img src="assets/images/coin.png" width="80" alt="">
+								<h1 id="coins-display">0</h1>
+							</div>
+
+						</div>
+
+						<div class="row">
+
+							<div class="col-md-12">
+								<a href="stats.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="history">Your Stats</button></a>
+								<a href="leaderboard.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="leaderboard">Leaderboard</button></a>
+								<a href="store.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="store">Store</button></a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="card text-center">
+					<div class="card-header">
+						Physics Topics
+					</div>
+					<div class="card-body">
+						<button type="button" class="btn btn-default btn-lg btn-block physics-topic-button" clicked="false" id ="1DKinematics">1D Kinematics</button>
+						<button type="button" class="btn btn-default btn-lg btn-block physics-topic-button" clicked="false" id ="NewtonsLaws">Newton's Laws</button>
+						<button type="button" class="btn btn-default btn-lg btn-block physics-topic-button" clicked="false" id ="2DKinematicsandForces">2D Kinematics and Forces</button>
+						<button type="button" class="btn btn-default btn-lg btn-block physics-topic-button" clicked="false" id ="Momentum">Momentum</button>
+						<button type="button" class="btn btn-default btn-lg btn-block physics-topic-button" clicked="false" id ="Energy">Energy</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card text-center">
+					<div class="card-header">
+						Gamble
+					</div>
+					<div class="card-body">
+						<button type="button" class="btn btn-default btn-lg btn-block gamble-amount-button" clicked="false" id="gamble1">10</button>
+						<button type="button" class="btn btn-default btn-lg btn-block gamble-amount-button" clicked="false" id="gamble2">20</button>
+						<button type="button" class="btn btn-default btn-lg btn-block gamble-amount-button" clicked="false" id="gamble3">30</button>
+						<button type="button" class="btn btn-default btn-lg btn-block gamble-amount-button" clicked="false" id="gamble4">40</button>
+						<button type="button" class="btn btn-default btn-lg btn-block gamble-amount-button" clicked="false" id="gamble5">50</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card text-center">
+					<div class="card-header">
+						Your Choices
+					</div>
+					<div class="card-body">
+						<h4>Topic: <span id="topic-display">Pick a Topic</span></h4>
+						<h4>Gamble: <span id="gamble-display">Pick an Amount of Coins</span></h4>
+						<button type="button" class="btn btn-warning" id="go-for-it" disabled>Go For It!</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- New User Modal -->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Welcome to Physics Coins!</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+
+		<h3>I see you're new to Physics Coins!  Here's what to know...</h3>
+		<br>
+		<ul>
+			<li>Pick a physics topic you'd like a multiple choice question about</li>
+			<li>Choose an amount of coins you'd like to gamble</li>
+			<li>If you get the question CORRECT you win double the amount of coins you gambled</li>
+			<li>If you get the quesiton INCORRECT you lose the amount of coins you gambled</li>
+		</ul>
+		<br>
+		Since you're new you don't have any coins.  Click below to get 10 coins to get rolling!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="get-10-coins">Get 10 Coins</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Question Modal -->
+<div class="modal fade bd-example-modal-lg" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" id="question-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Topic: <span id="question-topic"></span></h5>
+        <h5 class="modal-title">Gambling: <span id="gamble-amount"></span></h5>
+        </button>
+      </div>
+      <div class="modal-body">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h5 id="question-text">Here is the text of the question.  It may be long or short depending.  Maybe there will be a picture involced as well, who knows, we'll have to see</h5>
+			</div>
+		</div>
+
+		<div class="row text-center">
+			<div class="col-md-6" id="question1Div">
+				<button type="button" class="btn btn-default btn-block answer">A</button>
+			</div>
+
+			<div class="col-md-6" id="question2Div">
+				<button type="button" class="btn btn-default btn-block answer">B</button>
+			</div>
+		</div>
+
+		<div class="row text-center">
+			<div class="col-md-6" id="question3Div">
+				<button type="button" class="btn btn-default btn-block answer">C</button>
+			</div>
+
+			<div class="col-md-6" id="question4Div">
+				<button type="button" class="btn btn-default btn-block answer">D</button>
+			</div>
+		</div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" id="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Refreshed Modal -->
+<div class="modal fade" id="refreshedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ut Oh...</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+
+		<h3>Refreshing the Page while a question is displayed is a no-no!</h3>
+		<br>
+			By refreshing the page while a quesiton is showing, we're assuming you didn't want to answer it and are trying to get a new question "for free".  You have automatically lost the coins you have gambled on this question - as if you got it wrong.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="lose-coins">My Mistake! Lose <span id="coins-lost"></span</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Low Coins Modal -->
+<div class="modal fade" id="lowCoinsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">You look a bit low</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+
+		<h3>Hmmmm</h3>
+		<br>
+		You look like you might need a little boost.  Here, take 10 coins on us.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="get-10-help-coins">Get 10 Coins</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+	<script type="text/javascript" src="assets/javascript/firebase.js"></script>
+	<script type="text/javascript" src="assets/javascript/saltHash.js"></script>
+	<script type="text/javascript" src="assets/javascript/dashboardScript.js"></script>
+	<link href="assets/css/dashboardStyle.css" rel="stylesheet" />
+
+</body>
+</html>
