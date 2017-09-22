@@ -9,6 +9,12 @@ var correct = new Audio('assets/sounds/correct.mp3');
 var wrong = new Audio('assets/sounds/wrong.mp3');
 var questionNumberCorrect = 0;
 
+
+console.log(token)
+if (token === null)
+{
+	$('#loginModal').modal("show")
+}
 var shuffleArray = function(array)
 {
 	var result = []
@@ -153,8 +159,7 @@ database.ref("users").once('value', function(snap)
 					{
 						refreshed: false,
 						coins: newCoins
-					})		
-					
+					})					
 					updateGambleButtons(newCoins)
 					updateCoinsOverTime()
 			}
@@ -165,9 +170,7 @@ database.ref("users").once('value', function(snap)
 				updateGambleButtons(coins);		
 			}
 
-			console.log(snap.val()[i].bought.leaderboard.bought)
-
-			if (snap.val()[i].bought.leaderboard.bought)
+			if (snap.val()[i].bought !== undefined && snap.val()[i].bought.leaderboard.bought)
 			{
 				$('#leaderboard').show()
 			}
@@ -430,7 +433,14 @@ $('#submit').on('click', function(event)
 			$('.answer').attr('class', 'btn btn-default btn-block answer')
 			$('.gamble-amount-button').attr('class', 'btn btn-default btn-lg btn-block gamble-amount-button');
 			$('.gamble-amount-button').attr('clicked', 'false');
-			gambleAmountDisplay.html("Pick an Amount of Coins")
+			gambleAmountDisplay.html("Pick an Amount of Coins");
+
+			$('.physics-topic-button').attr('class', 'btn btn-default btn-lg btn-block physics-topic-button');
+			$('.physics-topic-button').attr('clicked', 'false');
+			physicsTopicDisplay.html("Pick a Topic")
+
+
+
 			$('#go-for-it').prop('disabled', true);
 			$('#questionModal').modal('hide')
 			freeze = false;
