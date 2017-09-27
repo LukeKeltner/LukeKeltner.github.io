@@ -1,3 +1,14 @@
+var enCryptData = function(rawdata)
+{
+    return CryptoJS.AES.encrypt(rawdata, "Secret Passphrase");
+}
+   
+ 
+var deCryptData = function(encryptData)
+{
+	return CryptoJS.AES.decrypt(encryptData, "Secret Passphrase").toString(CryptoJS.enc.Utf8);
+}
+
 var createToken = function()
 {
     var chars = ["1","2","3","4","5","6","7","8","9","0","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
@@ -62,17 +73,17 @@ $('#login').on('click', function(event)
 	{
 		for (var i=0; i<snap.val().length; i++)
         {
-        	console.log(email+" and "+snap.val()[i].email)
-        	console.log(snap.val()[i].email === email)
-
             if (snap.val()[i].email === email)
             {
             	wrongEmail = false;
-            	var userSalt = snap.val()[i].salt;
-                var userHash = snap.val()[i].hash;
-                var createdHash = createHash(password, userSalt);
+/*            	var userSalt = snap.val()[i].salt;
+                var userHash = snap.val()[i].hash;*/
+                var databasePassword = snap.val()[i].password
+                /*var createdHash = createHash(password, userSalt);*/
+                var deCryptPassword = deCryptData(databasePassword)
+                console.log(deCryptPassword)
 
-            	if (createdHash === userHash)
+            	if (password === deCryptPassword.toString())
             	{
             		validPassword = true;
             		loggedIn = true;
@@ -139,8 +150,10 @@ $('#register').on('click', function(event)
 
 	if (validName && validEmail && validPassword)
 	{
-		var salt = createSalt()
-  		var hash = createHash(password1, salt)
+/*		var salt = createSalt()
+  		var hash = createHash(password1, salt)*/
+
+  		var enCryptPassword = enCryptData(password1).toString()
 
 		database.ref('users').once('value', function(snap)
 		{
@@ -155,12 +168,14 @@ $('#register').on('click', function(event)
               {
                 name: name,
                 email: email,
-                salt: salt,
-                hash: hash,
+/*                salt: salt,
+                hash: hash,*/
                 coins: 0,
                 new: true,
                 token: token,
-                coinsOverTime: coinsOverTime
+                coinsOverTime: coinsOverTime,
+                stars: 0,
+                password: enCryptPassword
               })
               window.location.href = 'dashboard.html';
             }
@@ -191,12 +206,14 @@ $('#register').on('click', function(event)
                   {
 		                name: name,
 		                email: email,
-		                salt: salt,
-		                hash: hash,
+/*		                salt: salt,
+		                hash: hash,*/
 		                coins: 0,
 		                new: true,
 		                token: token,
-		                coinsOverTime: coinsOverTime
+		                coinsOverTime: coinsOverTime,
+		                stars: 0,
+		                password: enCryptPassword
                   })
 
                   window.location.href = 'dashboard.html';

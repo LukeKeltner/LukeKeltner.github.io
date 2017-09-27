@@ -3,10 +3,12 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
 
 	<title>Physics Coins</title>
 </head>
 <body>
+	<div id="you-got-a-star">You got a star!<br><i class="fa fa-star fa-2x" aria-hidden="true" id="star"></i></div>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 			<img src="assets/images/coin.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -77,19 +79,33 @@
 					<div class="card-body">
 						<div class="row">
 
-							<div class="col-md-12">
+							<div class="col-md-8">
 								<img src="assets/images/coin.png" width="80" alt="">
 								<h1 id="coins-display">0</h1>
+							</div>
+
+							<div class="col-md-4">
+								<div id="stars-container">
+								</div>
 							</div>
 
 						</div>
 
 						<div class="row">
 
-							<div class="col-md-12">
+							<div class="col-md-8">
 								<a href="stats.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="history">Your Stats</button></a>
 								<a href="leaderboard.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="leaderboard">Leaderboard</button></a>
 								<a href="store.html"><button type="button" class="btn btn-warning btn-lg stats-leaderboard" id="store">Store</button></a>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-header">
+										<h5>Next Star <span id="next-star"></span></h5> 
+									</div>
+								</div>
+						
 							</div>
 
 						</div>
@@ -172,7 +188,7 @@
 		<ul>
 			<li>Pick a physics topic you'd like a multiple choice question about</li>
 			<li>Choose an amount of coins you'd like to gamble</li>
-			<li>If you get the question CORRECT you win double the amount of coins you gambled</li>
+			<li>If you get the question CORRECT you win the amount of coins you gambled</li>
 			<li>If you get the quesiton INCORRECT you lose the amount of coins you gambled</li>
 		</ul>
 		<br>
@@ -308,6 +324,8 @@
 	<script type="text/javascript" src="assets/javascript/firebase.js"></script>
 	<script type="text/javascript" src="assets/javascript/saltHash.js"></script>
 	<script type="text/javascript" src="assets/javascript/dashboardScript.js"></script>
+	<script type="text/javascript" src="assets/javascript/goForIt.js"></script>
+	<script type="text/javascript" src="assets/javascript/submit.js"></script>
 	<link href="assets/css/dashboardStyle.css" rel="stylesheet" />
 
 </body>

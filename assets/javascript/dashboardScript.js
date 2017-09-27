@@ -7,7 +7,9 @@ var choice = '';
 var freeze = false;
 var correct = new Audio('assets/sounds/correct.mp3');
 var wrong = new Audio('assets/sounds/wrong.mp3');
+var gotStar = new Audio('assets/sounds/star.mp3');
 var questionNumberCorrect = 0;
+var initialMaxCoins = 100
 
 
 console.log(token)
@@ -15,6 +17,7 @@ if (token === null)
 {
 	$('#loginModal').modal("show")
 }
+
 var shuffleArray = function(array)
 {
 	var result = []
@@ -58,17 +61,22 @@ var updateCoinsOverTime = function()
 	var coinsOverTime = []
 	var coins = 0;
 
-	database.ref("users/"+userID).once("value", function(snap)
+	database.ref("users/"+userID).once("value").then(function(snap)
 	{
 		coinsOverTime = snap.val().coinsOverTime
 		coins = snap.val().coins
-	})
+		coinsOverTime.push(coins)
 
-	coinsOverTime.push(coins)
+		database.ref("users/"+userID).update(
+		{
+			coinsOverTime: coinsOverTime
+		})
 
-	database.ref("users/"+userID).update(
-	{
-		coinsOverTime: coinsOverTime
+		if (coins < 10)
+		{
+			console.log("twice here?")
+			getSomeHelp()
+		}	
 	})
 }
 
@@ -111,21 +119,89 @@ var updateTopicChoices = function()
 	})
 }
 
+var starCheck = function()
+{
+	database.ref("users/"+userID).once("value", function(snap)
+	{
+		var coins = snap.val().coins
+		var stars = snap.val().stars
+		var maxCoins = initialMaxCoins * Math.pow(10, stars)
+
+		console.log("Amount of coins to next star: "+maxCoins)
+
+		if (coins > maxCoins)
+		{
+			var width = $(window).width()
+			var height = $(window).height()
+
+			$('#you-got-a-star').css("width", width)
+			$('#you-got-a-star').css("height", height)
+
+			gotStar.play()
+			$('#you-got-a-star').fadeIn()
+
+			setTimeout(function()
+			{
+				$('#you-got-a-star').fadeOut()
+
+			},2000)
+
+			var newCoins = coins - maxCoins;
+			var newStars = stars + 1;
+
+			database.ref("users/"+userID).update(
+			{
+				coins: newCoins,
+				stars: newStars
+			})
+
+			updateCoinsOverTime()
+		}
+
+	})
+}
+
+var displayStars = function()
+{
+	$('#stars-container').html("")
+	database.ref("users/"+userID).once("value", function(snap)
+	{
+		var numberOfStars = snap.val().stars
+
+		for (var i=0; i<numberOfStars; i++)
+		{
+			$('#stars-container').append('<i class="fa fa-star fa-2x" aria-hidden="true"></i>')
+		}
+	})
+}
+
+var nextStarDisplay = function()
+{
+	database.ref("users/"+userID).once("value", function(snap)
+	{
+		var stars = snap.val().stars;
+		var nextStar = initialMaxCoins * Math.pow(10,stars)
+		$('#next-star').html(nextStar.toLocaleString())
+	})
+}
+
 var getSomeHelp = function()
 {
 	$('#lowCoinsModal').modal('show')
 
 	$('#get-10-help-coins').on('click', function(event)
 	{
+		console.log("Boop")
 		database.ref("users/"+userID).update(
 		{
 			coins: 10
 		})
 
+		console.log("About to add 10 to coinsOVerTime")
+		updateCoinsOverTime()
+
 		$('#lowCoinsModal').modal('hide')
 	})
-
-	$('#lowCoinsModal').modal('hide')
 }
 
 database.ref("users").once('value', function(snap)
@@ -140,6 +216,8 @@ database.ref("users").once('value', function(snap)
 			$('#coins-display').html(snap.val()[i].coins.toLocaleString())
 
 			updateTopicChoices()
+			displayStars()
+			nextStarDisplay()
 
 			if (snap.val()[i].refreshed)
 			{
@@ -200,17 +278,15 @@ database.ref("users").on('value', function(snap)
 {
 	if (userID !== -1)
 	{
+		console.log("User updated twice?")
 		var coins = snap.val()[userID].coins
 		var updateCoins = coins.toLocaleString()
 		$('#coins-display').html(updateCoins)
 
 		updateGambleButtons(coins);
 		updateTopicChoices()
-
-		if (coins < 10)
-		{
-			getSomeHelp()
-		}
+		displayStars()
+		nextStarDisplay()		
 	}
 })
 
@@ -271,179 +347,5 @@ $('.gamble-amount-button').on('click', function(event)
 		$(this).attr('clicked', 'false');
 		gambleAmountDisplay.html("Pick an Amount of Coins")
 		$('#go-for-it').prop('disabled', true);
-	}
-})
-
-$('#go-for-it').on('click', function(event)
-{
-	var topic = physicsTopicDisplay.html();
-	var gambleAmount = gambleAmountDisplay.html()
-	gambleAmount = gambleAmount.replace(/,/g, "");
-	gambleAmount = parseInt(gambleAmount);
-
-	database.ref("users/"+userID).update(
-	{
-		gamble: gambleAmount
-	})
-
-	$('#questionModal').modal('show');
-	$('#question-topic').html(topic)
-	$('#gamble-amount').html(gambleAmount.toLocaleString())
-
-	database.ref("questions/"+topic).once("value").then(function(snap)
-	{
-		var questionBank = snap.val()
-		console.log("Below this!")
-		console.log(questionBank)
-
-		database.ref("users/"+userID).once("value").then(function(snap2)
-		{
-			var user = snap2.val()
-			var numberCorrect = 0;
-			var seen = true;
-
-			var r = Math.floor(Math.random() * questionBank.length);
-			questionNumberCorrect = r;
-
-			while (numberCorrect < questionBank.length && seen)
-			{
-				seen = false;
-
-				for (var key in user[topic])
-				{
-					if (r === parseInt(key))
-					{
-						seen = true;
-						$('#question-text').prepend("Hey, you already got this question correct!<br>")
-						r = Math.floor(Math.random() * questionBank.length);
-						questionNumberCorrect = r;
-					}
-				}
-			}
-
-			if (numberCorrect < questionBank.length)
-			{
-				$('#question-text').html(questionBank[r].question)
-
-				if (questionBank[r].hard)
-				{
-					$('.modal-backdrop').css('background-color', 'red')
-					$('#question-text').prepend("<span style='color:#dc3545'>HARD</span><br>") 
-				}
-
-				buttons = []
-				var button1 = $("<button type='button' class='btn btn-default btn-block answer'></button>")
-				button1.data("data-result", "correct")
-				button1.html(questionBank[r].correct)
-				buttons.push(button1)
-
-				for (var i=0; i<3; i++)
-				{
-					var button = $("<button type='button' class='btn btn-default btn-block answer'></button>")
-					button.data("data-result", "wrong")
-					button.html(questionBank[r].wrong[i])
-					buttons.push(button)
-				}
-
-				buttons = shuffleArray(buttons)
-
-				$('#question1Div').html(buttons[0])
-				$('#question2Div').html(buttons[1])
-				$('#question3Div').html(buttons[2])
-				$('#question4Div').html(buttons[3])
-			}
-		})
-	})
-
-	setTimeout(function()
-	{
-		window.onunload = function()
-		{
-			if($('#questionModal').hasClass('show'))
-			{
-				database.ref("users/"+userID).update(
-				{
-					refreshed: true
-				})
-			}
-		}
-	}, 1000)
-
-})
-
-$(document).on('click', '.answer', function(event)
-{
-	$('.answer').attr('class', 'btn btn-default btn-block answer')
-	$('.answer').removeClass('clicked')
-	$(this).attr('class', 'btn btn-primary btn-block answer')
-	choice = $(this).data('data-result')
-	$(this).addClass('clicked')
-})
-
-$('#submit').on('click', function(event)
-{
-	if (!freeze)
-	{
-		var gamble = 0;
-		var coins = 0;
-		var newCoins = 0;
-		database.ref("users/"+userID).once("value", function(snap)
-		{
-			gamble = snap.val().gamble
-			coins = snap.val().coins
-		})
-
-		if (choice === "correct")
-		{
-			var topic = $('#question-topic').html()
-
-			database.ref("users/"+userID+"/"+topic+"/"+questionNumberCorrect).set(
-			{
-				correct: true
-			})
-
-			correct.play()
-			var wonAmount = 2*gamble
-			newCoins = coins + wonAmount
-			$('.clicked').css("font-size", "200%")
-			$('.clicked').html("+"+wonAmount.toLocaleString())
-			$('.clicked').attr('class', 'btn btn-success btn-block answer')
-		}
-
-		else
-		{
-			//wrong.play()
-			var lostAmount = 1*gamble
-			newCoins = coins - lostAmount
-			$('.clicked').css("font-size", "200%")
-			$('.clicked').html("-"+lostAmount.toLocaleString())
-			$('.clicked').attr('class', 'btn btn-danger btn-block answer')
-		}
-
-		database.ref("users/"+userID).update(
-		{
-			coins: newCoins
-		})
-
-		updateCoinsOverTime()
-		freeze = true;
-
-		setTimeout(function()
-		{
-			$('.answer').attr('class', 'btn btn-default btn-block answer')
-			$('.gamble-amount-button').attr('class', 'btn btn-default btn-lg btn-block gamble-amount-button');
-			$('.gamble-amount-button').attr('clicked', 'false');
-			gambleAmountDisplay.html("Pick an Amount of Coins");
-
-			$('.physics-topic-button').attr('class', 'btn btn-default btn-lg btn-block physics-topic-button');
-			$('.physics-topic-button').attr('clicked', 'false');
-			physicsTopicDisplay.html("Pick a Topic")
-
-
-
-			$('#go-for-it').prop('disabled', true);
-			$('#questionModal').modal('hide')
-			freeze = false;
-		}, 2000)
 	}
 })
